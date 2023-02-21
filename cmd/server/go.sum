@@ -1,2 +1,4 @@
+github.com/danny-personal/distributed-services-with-go/internal/server v0.0.0-20230221002819-92b9caa31cbe h1:DTNIF2RlbQvFOsbilXcNAXApsFcEpOTShTcovd5O3cU=
+github.com/danny-personal/distributed-services-with-go/internal/server v0.0.0-20230221002819-92b9caa31cbe/go.mod h1:N4dNagaKVm6kPE9/1a91pQtLEc605pryFaq+CdE6YY4=
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
