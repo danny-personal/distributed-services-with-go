@@ -11,3 +11,9 @@ sudo chmod -R a+w /go/pkg/mod
 go get -u github.com/hashicorp/serf/serf
 go mod tidy
 ```
+
+```
+vscode ➜ .../distributed-services-with-go/ServerSideServiceDiscovery/internal/discovery (main) $ go test ./...
+ok      github.com/danny-personal/distributed-services-with-go/ServerSideServiceDiscovery/internal/discovery    (cached)
+vscode ➜ .../distributed-services-with-go/ServerSideServiceDiscovery/internal/discovery (main) $ 
+```

@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/hashicorp/serf v0.10.1
 	github.com/stretchr/testify v1.8.0
+	github.com/travisjeffery/go-dynaport v1.0.0
 	go.uber.org/zap v1.24.0
 )
 
