@@ -9,9 +9,17 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+ARG SERF_VERSION="0.8.2"
 RUN sudo apt-get update \ 
     && sudo apt-get install -y --no-install-recommends protobuf-compiler libprotobuf-dev \
-    && sudo rm -rf /var/lib/apt/lists/*
+    && sudo rm -rf /var/lib/apt/lists/* \
+    && sudo curl -L -o serf.zip https://releases.hashicorp.com/serf/${SERF_VERSION}/serf_${SERF_VERSION}_linux_amd64.zip \
+    && sudo unzip serf.zip -d /usr/local/serf \
+    && sudo rm -f serf.zip
+ENV PATH="$PATH:/usr/local/serf"
+
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1
+RUN go install google.golang.org/protobuf/...@v1.28.1
 
 # [Optional] Uncomment the next lines to use go get to install anything else you need
 # USER vscode
