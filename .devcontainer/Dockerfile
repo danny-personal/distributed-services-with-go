@@ -18,8 +18,15 @@ RUN sudo apt-get update \
     && sudo rm -f serf.zip
 ENV PATH="$PATH:/usr/local/serf"
 
+# go getは、Googleのサーバーへの接続がブロックされたため
+# RUN go install google.golang.org/grpc@v1.53.0
+RUN git clone https://github.com/grpc/grpc-go.git /go/src/google.golang.org/grpc
+
+RUN go install github.com/sqs/goreturns@latest
+
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1
 RUN go install google.golang.org/protobuf/...@v1.28.1
+RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
 
 # [Optional] Uncomment the next lines to use go get to install anything else you need
 # USER vscode
